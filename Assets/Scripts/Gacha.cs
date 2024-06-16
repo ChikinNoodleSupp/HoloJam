@@ -13,6 +13,16 @@ public class Gacha : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            GachaRoll();
+        }
     }
+
+    public void GachaRoll()
+    {
+        Debug.Log("you rolled gacha");
+
+    }
+
 }
