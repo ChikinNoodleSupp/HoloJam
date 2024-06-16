@@ -4,25 +4,24 @@ using UnityEngine;
 
 public class Gacha : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
+    public int pullRate = 0;
+    public int money = 0;
+    public GameObject[] lootTable;
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             GachaRoll();
+            
         }
     }
 
     public void GachaRoll()
     {
         Debug.Log("you rolled gacha");
-
+        GameObject gameObject = lootTable[Random.Range(0, lootTable.Length)];
     }
 
 }
