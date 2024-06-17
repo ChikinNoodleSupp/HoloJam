@@ -9,6 +9,8 @@ public class Loot : ScriptableObject
     public int dropChance;
     public Sprite gachaSprite;
     public string gachaRarity;
+    public Rigidbody Rigidbody;
+    public GameObject gameObject;
 
     public Loot(string gachaName, int dropchance)
     {
