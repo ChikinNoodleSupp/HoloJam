@@ -15,17 +15,17 @@ public class Gacha : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            GachaRoll();
+            //GachaRoll();
             GetGachaItem();
             
         }
     }
 
-    public void GachaRoll()
-    {
-        Debug.Log("you rolled gacha");
-        //GameObject gameObject = lootTable[Random.Range(0, lootTable.Length)];
-    }
+    //public void GachaRoll()
+    //{
+    //    Debug.Log("you rolled gacha");
+    //    //GameObject gameObject = lootTable[Random.Range(0, lootTable.Length)];
+    //}
 
     Loot GetGachaItem()
     {
@@ -37,6 +37,13 @@ public class Gacha : MonoBehaviour
             {
                 possibleItems.Add(item);
             }
+
         }
+        if(possibleItems.Count > 0)
+        {
+            Loot gachaDrop = possibleItems[Random.Range(0, possibleItems.Count)];
+            return gachaDrop;
+        }
+        return null;
     }
 }

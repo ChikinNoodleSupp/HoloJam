@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Lawnmower
   m_EditorClassIdentifier: 
   gachaName: Lawnmower
-  dropChance: 50
+  dropChance: 100
   gachaSprite: {fileID: 0}
   gachaRarity: 1

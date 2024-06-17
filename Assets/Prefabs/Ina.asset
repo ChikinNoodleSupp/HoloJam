@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Ina
   m_EditorClassIdentifier: 
   gachaName: Ina'nis
-  dropChance: 10
+  dropChance: 5
   gachaSprite: {fileID: 0}
   gachaRarity: 3
