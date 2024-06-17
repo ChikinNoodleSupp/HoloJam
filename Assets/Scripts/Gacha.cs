@@ -8,7 +8,7 @@ public class Gacha : MonoBehaviour
     //public int pullRate = 0;
     //public int money = 0;
     public GameObject[] lootTable;
-    public GameObject gachaDrop;
+    //public GameObject gachaDrop;
     //public List<Loot> lootList = new List<Loot>();
     
     
