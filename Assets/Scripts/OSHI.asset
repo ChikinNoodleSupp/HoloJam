@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bb82b9a8b7374742a09514b42653303, type: 3}
-  m_Name: Lawnmower
+  m_Script: {fileID: 11500000, guid: 249a9794f3620654fb4e77bcf3b98129, type: 3}
+  m_Name: OSHI
   m_EditorClassIdentifier: 
-  gachaName: Lawnmower
-  dropChance: 100
-  gachaSprite: {fileID: 21300000, guid: 73f7fad95695da747a31147e8e06234a, type: 3}
-  gachaRarity: 1
+  dropChance: 0
+  gachaName: 

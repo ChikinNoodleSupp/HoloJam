@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gachaName: Sanalite
   dropChance: 30
-  gachaSprite: {fileID: 0}
+  gachaSprite: {fileID: 21300000, guid: a6cd55930b822484b98614dc04c93d0f, type: 3}
   gachaRarity: 2
