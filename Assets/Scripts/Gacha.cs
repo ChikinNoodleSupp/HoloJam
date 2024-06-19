@@ -5,9 +5,7 @@ using UnityEngine;
 public class Gacha : MonoBehaviour
 {
 
-    //public int pullRate = 0;
-    //public int money = 0;
-   // public GameObject[] lootTable;
+   
     public GameObject[] tableOSSSHI;
     public GameObject[] tableOSHI;
     public GameObject[] tableOshit;
@@ -16,22 +14,29 @@ public class Gacha : MonoBehaviour
     public int dropChanceOshit;
     public bool itemDropped;
     public Transform spawnPoint;
-    //public GameObject gachaDrop;
-    //public List<Loot> lootList = new List<Loot>();
+    public Money money;
+    public int gachaCost;
+    public TempMove TempMove;
+    
 
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && money.moneyAmount >= gachaCost)
         {
             GachaRoll();
-
+            money.moneyAmount -= gachaCost;
+            
 
         }
     }
 
     public void GachaRoll()
     {
+        if (tag == "GachaItem")
+        {
+            
+        }
         Debug.Log("you rolled gacha");
         int randomNumber = Random.Range(0, 101); //1-100
         itemDropped = false;
@@ -54,6 +59,9 @@ public class Gacha : MonoBehaviour
             Instantiate(tableOshit[randomIndex], spawnPoint.transform.position, Quaternion.identity);
             itemDropped = true;
         }
+
+        TempMove.MoveGacha();
+
 
     }
 }
