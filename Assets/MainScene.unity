@@ -1017,10 +1017,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f522f6680a5425c4a988bd87d4ebee6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lootTable:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  tableOSSSHI:
+  - {fileID: 2249324270502639627, guid: b7af4334654d4b04d9522a3516172800, type: 3}
+  - {fileID: 2249324270502639627, guid: b113ac183f4427c4dbcca8c1f69e42c8, type: 3}
+  tableOSHI:
+  - {fileID: 7948101673936279261, guid: f3813a19926e0634f85cce5101f59c8c, type: 3}
+  - {fileID: 7948101673936279261, guid: c1b8ae788a8c96b48bced70deda6766a, type: 3}
+  tableOshit:
+  - {fileID: 7484468149368677934, guid: 91dfccde0e57c4c4ba5bed8cfc944d6b, type: 3}
+  - {fileID: 7484468149368677934, guid: 44042852e281d1b4e956d57e472ec585, type: 3}
+  dropChanceOSSSHI: 100
+  dropChanceOSHI: 30
+  dropChanceOshit: 1
+  itemDropped: 0
+  spawnPoint: {fileID: 1774935711}
 --- !u!1 &1988423696
 GameObject:
   m_ObjectHideFlags: 0
@@ -1032,7 +1042,7 @@ GameObject:
   - component: {fileID: 1988423698}
   - component: {fileID: 1988423697}
   m_Layer: 0
-  m_Name: Square
+  m_Name: FBK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

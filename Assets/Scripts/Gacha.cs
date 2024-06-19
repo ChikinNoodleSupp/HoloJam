@@ -7,57 +7,53 @@ public class Gacha : MonoBehaviour
 
     //public int pullRate = 0;
     //public int money = 0;
-    public GameObject[] lootTable;
+   // public GameObject[] lootTable;
+    public GameObject[] tableOSSSHI;
+    public GameObject[] tableOSHI;
+    public GameObject[] tableOshit;
+    public int dropChanceOSSSHI;
+    public int dropChanceOSHI;
+    public int dropChanceOshit;
+    public bool itemDropped;
+    public Transform spawnPoint;
     //public GameObject gachaDrop;
     //public List<Loot> lootList = new List<Loot>();
-    
-    
-    //void Update()
-    //{
-    //    if (Input.GetKeyDown(KeyCode.Space))
-    //    {
-    //        //GachaRoll();
-    //        //GetGachaItem();
-    //        GetComponent<Gacha>().InstantiateLoot(transform.position);
-            
-    //    }
-    //}
 
-    ////public void GachaRoll()
-    ////{
-    ////    Debug.Log("you rolled gacha");
-    ////    //GameObject gameObject = lootTable[Random.Range(0, lootTable.Length)];
-    ////}
 
-    //Loot GetGachaItem()
-    //{
-    //    int randomNumber = Random.Range(1, 101); //1-100
-    //    List<Loot> possibleItems = new List<Loot>();
-    //    foreach (Loot item in lootList)
-    //    {
-    //        if(randomNumber <= item.dropChance)
-    //        {
-    //            possibleItems.Add(item);
-    //        }
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            GachaRoll();
 
-    //    }
-    //    if(possibleItems.Count > 0)
-    //    {
-    //        Loot gachaDrop = possibleItems[Random.Range(0, possibleItems.Count)]; //picks a random item 
-    //        return gachaDrop;
-    //    }
-    //    return null;
-    //}
 
-    //public void InstantiateLoot(Vector3 spawnPoint)
-    //{
-    //    Loot gachaDrop = GetGachaItem();
-    //    if (gachaDrop != null)
-    //    {
-    //        GameObject lootGameObject = Instantiate(gachaDrop, spawnPoint, Quaternion.identity);
-    //        lootGameObject.GetComponent<SpriteRenderer>().sprite = gachaDrop.gachaSprite;
+        }
+    }
 
-    //        //add VFX code here
-    //    }
-    //}
+    public void GachaRoll()
+    {
+        Debug.Log("you rolled gacha");
+        int randomNumber = Random.Range(0, 101); //1-100
+        itemDropped = false;
+        
+        if (randomNumber <= dropChanceOSSSHI && !itemDropped) //1 out of 100
+        {
+            int randomIndex = Random.Range(0, tableOSSSHI.Length); //pick a random object in this array of game objects
+            Instantiate(tableOSSSHI[randomIndex], spawnPoint.transform.position, Quaternion.identity);
+            itemDropped = true;
+        }
+        else if (randomNumber <= dropChanceOSHI && randomNumber > 1 && !itemDropped) //30 out of 100
+        {
+            int randomIndex = Random.Range(0, tableOSHI.Length);
+            Instantiate(tableOSHI[randomIndex], spawnPoint.transform.position, Quaternion.identity);
+            itemDropped = true;
+        }
+        else if (!itemDropped) //100 out of 100
+        {
+            int randomIndex = Random.Range(0, tableOshit.Length);
+            Instantiate(tableOshit[randomIndex], spawnPoint.transform.position, Quaternion.identity);
+            itemDropped = true;
+        }
+
+    }
 }

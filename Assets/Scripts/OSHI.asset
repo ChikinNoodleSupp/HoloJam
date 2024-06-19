@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 249a9794f3620654fb4e77bcf3b98129, type: 3}
   m_Name: OSHI
   m_EditorClassIdentifier: 
-  dropChance: 0
+  dropChance: 30
   gachaName: 
