@@ -1026,9 +1026,9 @@ MonoBehaviour:
   tableOshit:
   - {fileID: 7484468149368677934, guid: 91dfccde0e57c4c4ba5bed8cfc944d6b, type: 3}
   - {fileID: 7484468149368677934, guid: 44042852e281d1b4e956d57e472ec585, type: 3}
-  dropChanceOSSSHI: 100
-  dropChanceOSHI: 30
-  dropChanceOshit: 1
+  dropChanceOSSSHI: 3
+  dropChanceOSHI: 20
+  dropChanceOshit: 100
   itemDropped: 0
   spawnPoint: {fileID: 1774935711}
 --- !u!1 &1988423696
