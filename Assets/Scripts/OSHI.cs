@@ -51,11 +51,8 @@ public class OSHI : MonoBehaviour
 
         }
 
-       
 
     }
-
-    
 
     private void OnTriggerEnter(Collider other)
     {
