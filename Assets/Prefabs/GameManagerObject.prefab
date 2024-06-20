@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7844168946582811890
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4721382217345069759}
+  - component: {fileID: 1572419584319733099}
+  - component: {fileID: 366969739047501855}
+  m_Layer: 0
+  m_Name: GameManagerObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4721382217345069759
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7844168946582811890}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1572419584319733099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7844168946582811890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f522f6680a5425c4a988bd87d4ebee6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tableOSSSHI:
+  - {fileID: 4510757626089305217, guid: 5f0306d9b3000354d9c5e056e7cc8e5c, type: 3}
+  - {fileID: 6316867988432064860, guid: c9516a3300fc25647a1431fcd08e6b1a, type: 3}
+  - {fileID: 5345887298247993229, guid: 470bded66f464864aa1dbcf1716acec2, type: 3}
+  - {fileID: 6316867988432064860, guid: f74d30a5ea4ba884e96b63512cdb3196, type: 3}
+  tableOSHI:
+  - {fileID: 26141217489839094, guid: 015c91a112a52274f98af6cef4a5b078, type: 3}
+  - {fileID: 6316867988432064860, guid: f0864a3b79d3b934984182bc6872f038, type: 3}
+  tableOshit:
+  - {fileID: 6316867988432064860, guid: bcc40c4faca99d24491c29a930f6e37a, type: 3}
+  - {fileID: 9020034585582602486, guid: e6417c739b73d4e428b6e7178b942301, type: 3}
+  dropChanceOSSSHI: 3
+  dropChanceOSHI: 20
+  dropChanceOshit: 100
+  itemDropped: 0
+  spawnPoint: {fileID: 0}
+  money: {fileID: 366969739047501855}
+  gachaCost: 10
+--- !u!114 &366969739047501855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7844168946582811890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 822653ef63a1fc94893cc7e5883f63fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moneyText: {fileID: 0}
+  moneyAmount: 100
+  delayAmount: 1

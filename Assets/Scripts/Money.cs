@@ -9,6 +9,7 @@ public class Money : MonoBehaviour
     public int moneyAmount;
     private float timer = 0f;
     public float delayAmount;
+    public Gacha gacha;
     
 
     // Update is called once per frame
