@@ -5,45 +5,80 @@ using UnityEngine;
 public class Gacha : MonoBehaviour
 {
 
-    public int pullRate = 0;
-    public int money = 0;
-    //public GameObject[] lootTable;
-    public GameObject gachaDrop;
-    public List<Loot> lootList = new List<Loot>();
-    // Update is called once per frame
+    [Tooltip("Put OSSSHI prefabs here")]
+    public GameObject[] tableOSSSHI;
+    [Tooltip("Put OSHI prefabs here")]
+    public GameObject[] tableOSHI;
+    [Tooltip("Put Oshit prefabs here")]
+    public GameObject[] tableOshit;
+    [Tooltip("Cant be smaller than 1 or bigger than 100")]
+    public int dropChanceOSSSHI;
+    [Tooltip("Cant be smaller than 1 or bigger than 100")]
+    public int dropChanceOSHI;
+    [Tooltip("this HAS to be 100, otherwise you have a chance to pull nothing")]
+    public int dropChanceOshit;
+    public bool itemDropped;
+    public Transform spawnPoint;
+    public Money money;
+    public int gachaCost;
+    [Tooltip("Your gacha pulls will be stored here")]
+    public List<GameObject> gachaPulls = new List<GameObject>();
+    public Transform storePoint;
+    public string gachaItemTag = "GachaItem";
+
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && money.moneyAmount >= gachaCost)
         {
-            //GachaRoll();
-            GetGachaItem();
+            GachaRoll();
+            money.moneyAmount -= gachaCost;
             
+
         }
     }
 
-    //public void GachaRoll()
-    //{
-    //    Debug.Log("you rolled gacha");
-    //    //GameObject gameObject = lootTable[Random.Range(0, lootTable.Length)];
-    //}
-
-    Loot GetGachaItem()
+    public void GachaRoll()
     {
-        int randomNumber = Random.Range(1, 101); //1-100
-        List<Loot> possibleItems = new List<Loot>();
-        foreach (Loot item in lootList)
+        
+        Debug.Log("you rolled gacha");
+        int randomNumber = Random.Range(0, 101); //1-100
+        itemDropped = false;
+        foreach (GameObject gachaItem in gachaPulls)
         {
-            if(randomNumber <= item.dropChance)
+            if (gachaItem != null)
             {
-                possibleItems.Add(item);
+                gachaItem.transform.position = storePoint.transform.position;
             }
+        }
 
-        }
-        if(possibleItems.Count > 0)
+        if (randomNumber <= dropChanceOSSSHI && !itemDropped) //1 out of 100
         {
-            Loot gachaDrop = possibleItems[Random.Range(0, possibleItems.Count)];
-            return gachaDrop;
+            // put VFX stuff here
+            int randomIndex = Random.Range(0, tableOSSSHI.Length); //pick a random object in this array of game objects
+            GameObject newPrefab = Instantiate(tableOSSSHI[randomIndex], spawnPoint.transform.position, Quaternion.identity);
+            itemDropped = true;
+            gachaPulls.Add(newPrefab);
         }
-        return null;
+        else if (randomNumber <= dropChanceOSHI && randomNumber > 1 && !itemDropped) //30 out of 100
+        {
+            // put VFX stuff here
+            int randomIndex = Random.Range(0, tableOSHI.Length);
+            GameObject newPrefab = Instantiate(tableOSHI[randomIndex], spawnPoint.transform.position, Quaternion.identity);
+            itemDropped = true;
+            gachaPulls.Add(newPrefab);
+        }
+        else if (!itemDropped) //100 out of 100
+        {
+            // put VFX stuff here
+            int randomIndex = Random.Range(0, tableOshit.Length);
+            GameObject newPrefab = Instantiate(tableOshit[randomIndex], spawnPoint.transform.position, Quaternion.identity);
+            itemDropped = true;
+            gachaPulls.Add(newPrefab);
+        }
+
+       
+
+
     }
 }
