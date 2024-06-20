@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7895243014511352587}
   - component: {fileID: 1652040158109044954}
   - component: {fileID: 4321430598716512076}
+  - component: {fileID: 8786356854815450978}
   m_Layer: 0
   m_Name: Ina
   m_TagString: GachaItem
@@ -100,3 +101,17 @@ MonoBehaviour:
   BillboardX: 1
   BillboardY: 1
   billboardZ: 1
+--- !u!114 &8786356854815450978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5345887298247993229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cdb1b647f77be44f920f5a78a3f7037, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moneyPop: 10
+  moneyTime: 2.5

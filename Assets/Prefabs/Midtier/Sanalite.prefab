@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 226781693440787367}
   - component: {fileID: 4744980600854749353}
   - component: {fileID: 4764744482307465859}
+  - component: {fileID: 1420442403781974006}
   m_Layer: 0
   m_Name: Sanalite
   m_TagString: GachaItem
@@ -100,3 +101,18 @@ MonoBehaviour:
   BillboardX: 1
   BillboardY: 1
   billboardZ: 1
+--- !u!114 &1420442403781974006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26141217489839094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97e220cee3f365042accccf86f7a394c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moneyPop: 7
+  moneyTime: 3
+  fanfareChance: 3
