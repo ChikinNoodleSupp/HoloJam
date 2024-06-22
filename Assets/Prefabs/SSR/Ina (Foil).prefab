@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 333475213717979465}
   - component: {fileID: 1431950886216934510}
   - component: {fileID: 9032048147762328274}
+  - component: {fileID: 1224875072850864864}
   m_Layer: 0
   m_Name: Ina (Foil)
   m_TagString: GachaItem
@@ -115,3 +116,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyPop: 10
   moneyTime: 2.5
+--- !u!65 &1224875072850864864
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6316867988432064860}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 10, y: 12, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}

@@ -10,7 +10,8 @@ public class OSHI : MonoBehaviour
     public float moneyTime;
     public int fanfareChance;
     public bool fanfareStatus;
-    public float radius = 1.0f;
+    public float radius = 10.0f;
+    [SerializeField] private List<GameObject> fanfareObjects = new List<GameObject>();
 
 
     void Awake()
@@ -36,7 +37,7 @@ public class OSHI : MonoBehaviour
             {
                 // Add the specified amount of money
                 moneyScript.moneyAmount += amount;
-                Debug.Log("Added " + amount + " money. Total money: " + moneyScript.moneyAmount);
+                //Debug.Log("Added " + amount + " money. Total money: " + moneyScript.moneyAmount);
             }
             else
             {
@@ -44,9 +45,21 @@ public class OSHI : MonoBehaviour
             }
 
             int randomNumber = Random.Range(0, 101); //1-100
-            if(randomNumber >= fanfareChance)
+            if(randomNumber <= fanfareChance)
             {
-                fanfareStatus = true;
+                Debug.Log("YOU GOT FANFARED");
+                foreach (GameObject n in fanfareObjects)
+                {
+
+                    
+                    if (n.GetComponent<FanFareEffect>() == null)
+                    {
+                        n.AddComponent<FanFareEffect>();
+                        FanFareEffect fanfare = n.GetComponent<FanFareEffect>();
+                        fanfare.TriggerFanfare(6f, 2f);
+                    }
+                    
+                }
             }
 
         }
@@ -56,11 +69,19 @@ public class OSHI : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "GachaItem" && fanfareStatus == true)
+        if (other.tag == "GachaItem")
         {
-            //do the thing to things around you. How? IDK im not a programmer or a designer...
+            fanfareObjects.Add(other.gameObject);
+
         }
     }
     
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.tag == "GachaItem")
+        {
+            fanfareObjects.Remove(other.gameObject);
+        }
+    }
 
 }

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8724779174575868977}
   - component: {fileID: 5453833563830901957}
   - component: {fileID: -9144929160736058571}
+  - component: {fileID: 5413323513162246580}
   m_Layer: 0
   m_Name: FBK
   m_TagString: GachaItem
@@ -115,3 +116,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyPop: 10
   moneyTime: 2.5
+--- !u!65 &5413323513162246580
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4510757626089305217}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.66, y: 6, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}

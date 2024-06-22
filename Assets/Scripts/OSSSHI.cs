@@ -29,7 +29,7 @@ public class OSSSHI : MonoBehaviour
             {
                 // Add the specified amount of money
                 moneyScript.moneyAmount += amount;
-                Debug.Log("Added " + amount + " money. Total money: " + moneyScript.moneyAmount);
+                //Debug.Log("Added " + amount + " money. Total money: " + moneyScript.moneyAmount);
             }
             else
             {
