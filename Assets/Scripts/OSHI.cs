@@ -14,7 +14,7 @@ public class OSHI : MonoBehaviour
     [SerializeField] private List<GameObject> fanfareObjects = new List<GameObject>();
 
 
-    void Awake()
+    void Start()//Awake()
     {
         moneyScript = FindObjectOfType<Money>();
         // Start the coroutine to add money after 4 seconds
