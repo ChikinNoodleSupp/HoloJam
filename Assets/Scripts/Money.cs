@@ -26,5 +26,11 @@ public class Money : MonoBehaviour
         //    moneyAmount++;
         //}
         moneyText.text = "Money:" + Mathf.Round(moneyAmount);
+
+        if(moneyAmount >= gacha.gachaCost)
+        {
+            //put visual notice that you can roll here
+        }
+
     }
 }

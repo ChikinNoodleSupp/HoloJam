@@ -12,9 +12,10 @@ public class RandomMovement : MonoBehaviour //don't forget to change the script 
     public Transform centrePoint; //centre of the area the agent wants to move around in
     //instead of centrePoint you can set it as the transform of the agent if you don't care about a specific area
 
-    void Start()
+    void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        centrePoint = this.transform;
     }
 
 

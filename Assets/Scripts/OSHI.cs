@@ -10,8 +10,9 @@ public class OSHI : MonoBehaviour
     public float moneyTime;
     public int fanfareChance;
     public bool fanfareStatus;
-    public float radius = 10.0f;
+    public float radius;
     [SerializeField] private List<GameObject> fanfareObjects = new List<GameObject>();
+    public int dupeAmount;
 
 
     void Start()//Awake()
@@ -82,6 +83,12 @@ public class OSHI : MonoBehaviour
         {
             fanfareObjects.Remove(other.gameObject);
         }
+    }
+
+    public void DuplicateBuff()
+    {
+
+        moneyPop += dupeAmount;
     }
 
 }

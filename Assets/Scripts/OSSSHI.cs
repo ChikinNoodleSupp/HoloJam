@@ -7,6 +7,7 @@ public class OSSSHI : MonoBehaviour
     private Money moneyScript;
     public int moneyPop;
     public float moneyTime;
+    public int dupeAmount;
 
     void Awake()
     {
@@ -40,4 +41,10 @@ public class OSSSHI : MonoBehaviour
 
 
     }
+
+    public void DuplicateBuff()
+    {
+        moneyPop += dupeAmount;
+    }
+
 }

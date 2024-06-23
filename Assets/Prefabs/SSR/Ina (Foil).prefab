@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 1431950886216934510}
   - component: {fileID: 9032048147762328274}
   - component: {fileID: 1224875072850864864}
+  - component: {fileID: 4217295636379997693}
+  - component: {fileID: -7902777942080193410}
   m_Layer: 0
   m_Name: Ina (Foil)
   m_TagString: GachaItem
@@ -116,6 +118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyPop: 10
   moneyTime: 2.5
+  dupeAmount: 5
 --- !u!65 &1224875072850864864
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -137,3 +140,40 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10, y: 12, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!195 &4217295636379997693
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6316867988432064860}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 3.96
+  m_Speed: 1
+  m_Acceleration: 5
+  avoidancePriority: 50
+  m_AngularSpeed: 80
+  m_StoppingDistance: 0.1
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 16.47
+  m_BaseOffset: 9.6
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &-7902777942080193410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6316867988432064860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38d6628a97497e64fb427eddb72b300c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 0}
+  range: 3
+  centrePoint: {fileID: 1264048947302554166, guid: 15ec55b8afb882d4b84d7bc7c59712e1, type: 3}

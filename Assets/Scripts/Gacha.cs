@@ -29,6 +29,9 @@ public class Gacha : MonoBehaviour
 
     void Update()
     {
+        
+
+
         if (Input.GetKeyDown(KeyCode.Space) && money.moneyAmount >= gachaCost)
         {
             GachaRoll();
@@ -44,41 +47,122 @@ public class Gacha : MonoBehaviour
         Debug.Log("you rolled gacha");
         int randomNumber = Random.Range(0, 101); //1-100
         itemDropped = false;
-        foreach (GameObject gachaItem in gachaPulls)
-        {
-            if (gachaItem != null)
-            {
-                gachaItem.transform.position = storePoint.transform.position;
-            }
-        }
+        //foreach (GameObject gachaItem in gachaPulls)
+        //{
+        //    //if (gachaItem != null)
+        //    //{
+        //    //    gachaItem.transform.position = storePoint.transform.position;
+        //    //}
+        //}
 
         if (randomNumber <= dropChanceOSSSHI && !itemDropped) //1 out of 100
         {
             // put VFX stuff here
             int randomIndex = Random.Range(0, tableOSSSHI.Length); //pick a random object in this array of game objects
-            GameObject newPrefab = Instantiate(tableOSSSHI[randomIndex], spawnPoint.transform.position, Quaternion.identity);
+            GameObject newPrefab = Instantiate(tableOSSSHI[randomIndex], spawnPoint.transform.position, Quaternion.identity); //spawns random object from the list
+            
+            if (IsDuplicate(newPrefab))
+            {
+                GameObject originalItem = GetOriginalItem(newPrefab);
+                scriptCheck(originalItem);
+                Destroy(newPrefab );
+            }
+            else
+            {
+                gachaPulls.Add(newPrefab);
+            }
+
             itemDropped = true;
-            gachaPulls.Add(newPrefab);
         }
         else if (randomNumber <= dropChanceOSHI && randomNumber > 1 && !itemDropped) //30 out of 100
         {
             // put VFX stuff here
             int randomIndex = Random.Range(0, tableOSHI.Length);
             GameObject newPrefab = Instantiate(tableOSHI[randomIndex], spawnPoint.transform.position, Quaternion.identity);
+
+            if (IsDuplicate(newPrefab))
+            {
+                GameObject originalItem = GetOriginalItem(newPrefab);
+                scriptCheck(originalItem);
+                Destroy(newPrefab);
+            }
+            else
+            {
+                gachaPulls.Add(newPrefab);
+            }
+
             itemDropped = true;
-            gachaPulls.Add(newPrefab);
         }
         else if (!itemDropped) //100 out of 100
         {
             // put VFX stuff here
             int randomIndex = Random.Range(0, tableOshit.Length);
             GameObject newPrefab = Instantiate(tableOshit[randomIndex], spawnPoint.transform.position, Quaternion.identity);
+
+            if (IsDuplicate(newPrefab))
+            {
+                GameObject originalItem = GetOriginalItem(newPrefab);
+                scriptCheck(originalItem);
+                Destroy(newPrefab);
+                
+            }
+            else
+            {
+                gachaPulls.Add(newPrefab);
+            }
+
             itemDropped = true;
-            gachaPulls.Add(newPrefab);
         }
 
-       
+       bool IsDuplicate(GameObject prefab)
+        {
+            Debug.Log(prefab.name);
+            
+            foreach (GameObject newPrefab in gachaPulls)
+            {
+                Debug.Log(newPrefab.name);
+                if (prefab.name  == newPrefab.name)
+                {
+
+                    return true;
+                }
+            }
+            return false;
+        }
 
 
+    }
+
+    public void scriptCheck(GameObject gameObject)
+    {
+        if (gameObject.GetComponent<OSHI>() != null)
+        {
+            OSHI oshi = gameObject.GetComponent<OSHI>();
+            oshi.DuplicateBuff();
+
+        }
+        if (gameObject.GetComponent<OSSSHI>() != null)
+        {
+            OSSSHI ossshi = gameObject.GetComponent<OSSSHI>();
+            ossshi.DuplicateBuff();
+        }
+        if (gameObject.GetComponent<Oshit>() != null)
+        {
+            Oshit oshit = gameObject.GetComponent<Oshit>();
+            oshit.DuplicateBuff();
+        }
+    }
+
+    public GameObject GetOriginalItem(GameObject orignalItem)
+    {
+
+        foreach (GameObject newPrefab in gachaPulls)
+        {
+            if (newPrefab.name == orignalItem.name)
+            {
+                return newPrefab;
+            }
+        }
+        return null;
     }
 }

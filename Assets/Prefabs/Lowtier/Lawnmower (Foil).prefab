@@ -119,6 +119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyPop: 5
   moneyTime: 4
+  dupeAmount: 2
 --- !u!65 &8404945922252492331
 BoxCollider:
   m_ObjectHideFlags: 0

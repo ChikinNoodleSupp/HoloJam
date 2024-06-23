@@ -7,7 +7,7 @@ public class Oshit : MonoBehaviour
     private Money moneyScript;
     public int moneyPop;
     public float moneyTime;
-
+    public int dupeAmount;
     void Awake()
     {
         moneyScript = FindObjectOfType<Money>();
@@ -39,5 +39,10 @@ public class Oshit : MonoBehaviour
         
 
         
+    }
+
+    public void DuplicateBuff()
+    {
+        moneyPop += dupeAmount;
     }
 }
