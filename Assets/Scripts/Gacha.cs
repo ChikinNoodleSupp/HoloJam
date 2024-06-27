@@ -35,97 +35,99 @@ public class Gacha : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && money.moneyAmount >= gachaCost) //chance this out for a UI button input or whatever
         {
             GachaRoll();
-            money.moneyAmount -= gachaCost;
             
-
         }
     }
 
     public void GachaRoll() //The entirety of the gacha system
     {
-        
-        Debug.Log("you rolled gacha");
-        int randomNumber = Random.Range(0, 101); //1-100
-        itemDropped = false;
-       
-
-        if (randomNumber <= dropChanceOSSSHI && !itemDropped) //1 out of 100 dropchance
+        if(money.moneyAmount >= gachaCost)
         {
-            // put VFX stuff here, so like first animation, and once animation is done, do the stuff below
+            money.moneyAmount -= gachaCost;
+            Debug.Log("you rolled gacha");
+            int randomNumber = Random.Range(0, 101); //1-100
+            itemDropped = false;
 
-            int randomIndex = Random.Range(0, tableOSSSHI.Length); //pick a random object in this array of game objects
-            GameObject newPrefab = Instantiate(tableOSSSHI[randomIndex], spawnPoint.transform.position, Quaternion.identity); //spawns random object from the list
-            
-            if (IsDuplicate(newPrefab)) //if its a dupe, buff original
+
+            if (randomNumber <= dropChanceOSSSHI && !itemDropped) //1 out of 100 dropchance
             {
-                GameObject originalItem = GetOriginalItem(newPrefab);
-                scriptCheck(originalItem);
-                Destroy(newPrefab );
-            }
-            else //else, spawn it
-            {
-                gachaPulls.Add(newPrefab);
-            }
+                // put VFX stuff here, so like first animation, and once animation is done, do the stuff below
 
-            itemDropped = true;
-        }
-        else if (randomNumber <= dropChanceOSHI && randomNumber > 1 && !itemDropped) //30 out of 100 dropchance
-        {
-            // put VFX stuff here, so like first animation, and once animation is done, do the stuff below
+                int randomIndex = Random.Range(0, tableOSSSHI.Length); //pick a random object in this array of game objects
+                GameObject newPrefab = Instantiate(tableOSSSHI[randomIndex], spawnPoint.transform.position, Quaternion.identity); //spawns random object from the list
 
-            int randomIndex = Random.Range(0, tableOSHI.Length);
-            GameObject newPrefab = Instantiate(tableOSHI[randomIndex], spawnPoint.transform.position, Quaternion.identity);
-
-            if (IsDuplicate(newPrefab))
-            {
-                GameObject originalItem = GetOriginalItem(newPrefab);
-                scriptCheck(originalItem);
-                Destroy(newPrefab);
-            }
-            else
-            {
-                gachaPulls.Add(newPrefab);
-            }
-
-            itemDropped = true;
-        }
-        else if (!itemDropped) //100 out of 100 dropchance
-        {
-            // put VFX stuff here, so like first animation, and once animation is done, do the stuff below
-
-            int randomIndex = Random.Range(0, tableOshit.Length);
-            GameObject newPrefab = Instantiate(tableOshit[randomIndex], spawnPoint.transform.position, Quaternion.identity);
-
-            if (IsDuplicate(newPrefab))
-            {
-                GameObject originalItem = GetOriginalItem(newPrefab);
-                scriptCheck(originalItem);
-                Destroy(newPrefab);
-                
-            }
-            else
-            {
-                gachaPulls.Add(newPrefab);
-            }
-
-            itemDropped = true;
-        }
-
-       bool IsDuplicate(GameObject prefab) //checks if what you got is a dupe or not
-        {
-            Debug.Log(prefab.name);
-            
-            foreach (GameObject newPrefab in gachaPulls)
-            {
-                Debug.Log(newPrefab.name);
-                if (prefab.name  == newPrefab.name)
+                if (IsDuplicate(newPrefab)) //if its a dupe, buff original
                 {
-
-                    return true;
+                    GameObject originalItem = GetOriginalItem(newPrefab);
+                    scriptCheck(originalItem);
+                    Destroy(newPrefab);
                 }
+                else //else, spawn it
+                {
+                    gachaPulls.Add(newPrefab);
+                }
+
+                itemDropped = true;
             }
-            return false;
+            else if (randomNumber <= dropChanceOSHI && randomNumber > 1 && !itemDropped) //30 out of 100 dropchance
+            {
+                // put VFX stuff here, so like first animation, and once animation is done, do the stuff below
+
+                int randomIndex = Random.Range(0, tableOSHI.Length);
+                GameObject newPrefab = Instantiate(tableOSHI[randomIndex], spawnPoint.transform.position, Quaternion.identity);
+
+                if (IsDuplicate(newPrefab))
+                {
+                    GameObject originalItem = GetOriginalItem(newPrefab);
+                    scriptCheck(originalItem);
+                    Destroy(newPrefab);
+                }
+                else
+                {
+                    gachaPulls.Add(newPrefab);
+                }
+
+                itemDropped = true;
+            }
+            else if (!itemDropped) //100 out of 100 dropchance
+            {
+                // put VFX stuff here, so like first animation, and once animation is done, do the stuff below
+
+                int randomIndex = Random.Range(0, tableOshit.Length);
+                GameObject newPrefab = Instantiate(tableOshit[randomIndex], spawnPoint.transform.position, Quaternion.identity);
+
+                if (IsDuplicate(newPrefab))
+                {
+                    GameObject originalItem = GetOriginalItem(newPrefab);
+                    scriptCheck(originalItem);
+                    Destroy(newPrefab);
+
+                }
+                else
+                {
+                    gachaPulls.Add(newPrefab);
+                }
+
+                itemDropped = true;
+            }
+
+            bool IsDuplicate(GameObject prefab) //checks if what you got is a dupe or not
+            {
+                Debug.Log(prefab.name);
+
+                foreach (GameObject newPrefab in gachaPulls)
+                {
+                    Debug.Log(newPrefab.name);
+                    if (prefab.name == newPrefab.name)
+                    {
+
+                        return true;
+                    }
+                }
+                return false;
+            }
         }
+        
 
 
     }
