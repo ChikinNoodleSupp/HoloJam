@@ -2454,12 +2454,24 @@ PrefabInstance:
       objectReference: {fileID: 255886691}
     - target: {fileID: 366969739047501855, guid: 5ac8f3cf8b40d32468bf02fdc639be2e, type: 3}
       propertyPath: moneyStartAmount
-      value: 1000
+      value: 10000
       objectReference: {fileID: 0}
+    - target: {fileID: 1572419584319733099, guid: 5ac8f3cf8b40d32468bf02fdc639be2e, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 1850940076}
     - target: {fileID: 1572419584319733099, guid: 5ac8f3cf8b40d32468bf02fdc639be2e, type: 3}
       propertyPath: boxAnim
       value: 
       objectReference: {fileID: 560952909345853806, guid: f5a04e07f43eec6428b91eab87371535, type: 3}
+    - target: {fileID: 1572419584319733099, guid: 5ac8f3cf8b40d32468bf02fdc639be2e, type: 3}
+      propertyPath: xOffset
+      value: 350
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572419584319733099, guid: 5ac8f3cf8b40d32468bf02fdc639be2e, type: 3}
+      propertyPath: yOffset
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 1572419584319733099, guid: 5ac8f3cf8b40d32468bf02fdc639be2e, type: 3}
       propertyPath: animator
       value: 
@@ -2473,12 +2485,28 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1774935711}
     - target: {fileID: 1572419584319733099, guid: 5ac8f3cf8b40d32468bf02fdc639be2e, type: 3}
+      propertyPath: spritesize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572419584319733099, guid: 5ac8f3cf8b40d32468bf02fdc639be2e, type: 3}
       propertyPath: storePoint
       value: 
       objectReference: {fileID: 1840293740}
     - target: {fileID: 1572419584319733099, guid: 5ac8f3cf8b40d32468bf02fdc639be2e, type: 3}
+      propertyPath: GachaItemPos
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572419584319733099, guid: 5ac8f3cf8b40d32468bf02fdc639be2e, type: 3}
+      propertyPath: animPosition
+      value: 
+      objectReference: {fileID: 403144092}
+    - target: {fileID: 1572419584319733099, guid: 5ac8f3cf8b40d32468bf02fdc639be2e, type: 3}
       propertyPath: dropChanceOSHI
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572419584319733099, guid: 5ac8f3cf8b40d32468bf02fdc639be2e, type: 3}
+      propertyPath: currentXPosition
+      value: 0.18
       objectReference: {fileID: 0}
     - target: {fileID: 1572419584319733099, guid: 5ac8f3cf8b40d32468bf02fdc639be2e, type: 3}
       propertyPath: dropChanceOSSSHI

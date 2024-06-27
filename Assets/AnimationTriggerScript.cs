@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 
 public class AnimationTriggerScript : StateMachineBehaviour
 {
-    public Gacha gacha;
+    //public Gacha gacha;
     // OnStateEnter is called before OnStateEnter is called on any state inside this state machine
     //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     //{
@@ -19,10 +19,10 @@ public class AnimationTriggerScript : StateMachineBehaviour
     //}
 
     //OnStateExit is called before OnStateExit is called on any state inside this state machine
-    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-        gacha.Destroy(box);
-    }
+    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    //{
+    //    gacha.Destroy(box);
+    //}
 
     // OnStateMove is called before OnStateMove is called on any state inside this state machine
     //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
