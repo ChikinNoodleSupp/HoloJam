@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Oshit : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class Oshit : MonoBehaviour
     public int moneyPop;
     public float moneyTime;
     public int dupeAmount;
+    [SerializeField] private MoneyProgressBar moneyBar;
+    
     void Awake()
     {
         moneyScript = FindObjectOfType<Money>();
@@ -21,14 +24,25 @@ public class Oshit : MonoBehaviour
 
         while (true)
         {
-            // Wait for the specified delay
-            yield return new WaitForSeconds(delay);
+
+            float elapsedTime = 0f;
+            while (elapsedTime < delay)
+            {
+                moneyBar.moneyBarSprite.fillAmount = elapsedTime / delay;
+                yield return null;
+                elapsedTime += Time.deltaTime;
+            }
+
+            moneyBar.moneyBarSprite.fillAmount = 1;
+
+
 
             // Check if the Money script is assigned
             if (moneyScript != null)
             {
                 // Add the specified amount of money
                 moneyScript.moneyAmount += amount;
+                
                 //Debug.Log("Added " + amount + " money. Total money: " + moneyScript.moneyAmount);
             }
             else
