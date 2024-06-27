@@ -25,7 +25,13 @@ public class Gacha : MonoBehaviour
     public List<GameObject> gachaPulls = new List<GameObject>();
     public Transform storePoint;
     public string gachaItemTag = "GachaItem";
+    public Animator animator;
+    public GameObject boxAnim;
 
+    private void Start()
+    {
+        
+    }
 
     void Update()
     {
@@ -34,19 +40,28 @@ public class Gacha : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && money.moneyAmount >= gachaCost) //chance this out for a UI button input or whatever
         {
-            GachaRoll();
+            //GachaRoll();
             
         }
+    }
+
+    public void GachaAnimation()
+    {
+        GameObject box = Instantiate(boxAnim);
+        boxAnim.GetComponent<Animator>().SetTrigger("Box");
+        Destroy(box);
     }
 
     public void GachaRoll() //The entirety of the gacha system
     {
         if(money.moneyAmount >= gachaCost)
         {
+
             money.moneyAmount -= gachaCost;
             Debug.Log("you rolled gacha");
             int randomNumber = Random.Range(0, 101); //1-100
             itemDropped = false;
+            GachaAnimation();
 
 
             if (randomNumber <= dropChanceOSSSHI && !itemDropped) //1 out of 100 dropchance
@@ -132,6 +147,26 @@ public class Gacha : MonoBehaviour
 
     }
 
+    public void RepeatGachaRoll()
+    {
+        if(money.moneyAmount >= gachaCost * 10)
+        {
+            
+            StartCoroutine(RepeatGachaRollCoroutine());
+        }
+        
+    }
+
+    private IEnumerator RepeatGachaRollCoroutine()
+    {
+        for(int i = 0; i < 10; i++)
+        {
+            GachaRoll();
+            
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
+
     public void scriptCheck(GameObject gameObject) //applies buff to gachaitem if you get dupe
     {
         if (gameObject.GetComponent<OSHI>() != null)
@@ -165,8 +200,5 @@ public class Gacha : MonoBehaviour
         return null;
     }
 
-    public void GachaNotice()
-    {
-        //put visual notice that you can roll here, like make UI button blink or whatever
-    }
+    
 }
