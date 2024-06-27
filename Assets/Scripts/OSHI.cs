@@ -61,6 +61,7 @@ public class OSHI : MonoBehaviour
             if (randomNumber <= fanfareChance)
             {
                 Debug.Log("YOU GOT FANFARED");
+                //Add VFX here that plays once, like a pulse or something
                 foreach (GameObject n in fanfareObjects)
                 {
 
@@ -73,6 +74,7 @@ public class OSHI : MonoBehaviour
                     }
 
                 }
+
             }
         }
 
