@@ -32,7 +32,7 @@ public class Gacha : MonoBehaviour
         
 
 
-        if (Input.GetKeyDown(KeyCode.Space) && money.moneyAmount >= gachaCost)
+        if (Input.GetKeyDown(KeyCode.Space) && money.moneyAmount >= gachaCost) //chance this out for a UI button input or whatever
         {
             GachaRoll();
             money.moneyAmount -= gachaCost;
@@ -41,42 +41,38 @@ public class Gacha : MonoBehaviour
         }
     }
 
-    public void GachaRoll()
+    public void GachaRoll() //The entirety of the gacha system
     {
         
         Debug.Log("you rolled gacha");
         int randomNumber = Random.Range(0, 101); //1-100
         itemDropped = false;
-        //foreach (GameObject gachaItem in gachaPulls)
-        //{
-        //    //if (gachaItem != null)
-        //    //{
-        //    //    gachaItem.transform.position = storePoint.transform.position;
-        //    //}
-        //}
+       
 
-        if (randomNumber <= dropChanceOSSSHI && !itemDropped) //1 out of 100
+        if (randomNumber <= dropChanceOSSSHI && !itemDropped) //1 out of 100 dropchance
         {
-            // put VFX stuff here
+            // put VFX stuff here, so like first animation, and once animation is done, do the stuff below
+
             int randomIndex = Random.Range(0, tableOSSSHI.Length); //pick a random object in this array of game objects
             GameObject newPrefab = Instantiate(tableOSSSHI[randomIndex], spawnPoint.transform.position, Quaternion.identity); //spawns random object from the list
             
-            if (IsDuplicate(newPrefab))
+            if (IsDuplicate(newPrefab)) //if its a dupe, buff original
             {
                 GameObject originalItem = GetOriginalItem(newPrefab);
                 scriptCheck(originalItem);
                 Destroy(newPrefab );
             }
-            else
+            else //else, spawn it
             {
                 gachaPulls.Add(newPrefab);
             }
 
             itemDropped = true;
         }
-        else if (randomNumber <= dropChanceOSHI && randomNumber > 1 && !itemDropped) //30 out of 100
+        else if (randomNumber <= dropChanceOSHI && randomNumber > 1 && !itemDropped) //30 out of 100 dropchance
         {
-            // put VFX stuff here
+            // put VFX stuff here, so like first animation, and once animation is done, do the stuff below
+
             int randomIndex = Random.Range(0, tableOSHI.Length);
             GameObject newPrefab = Instantiate(tableOSHI[randomIndex], spawnPoint.transform.position, Quaternion.identity);
 
@@ -93,9 +89,10 @@ public class Gacha : MonoBehaviour
 
             itemDropped = true;
         }
-        else if (!itemDropped) //100 out of 100
+        else if (!itemDropped) //100 out of 100 dropchance
         {
-            // put VFX stuff here
+            // put VFX stuff here, so like first animation, and once animation is done, do the stuff below
+
             int randomIndex = Random.Range(0, tableOshit.Length);
             GameObject newPrefab = Instantiate(tableOshit[randomIndex], spawnPoint.transform.position, Quaternion.identity);
 
@@ -114,7 +111,7 @@ public class Gacha : MonoBehaviour
             itemDropped = true;
         }
 
-       bool IsDuplicate(GameObject prefab)
+       bool IsDuplicate(GameObject prefab) //checks if what you got is a dupe or not
         {
             Debug.Log(prefab.name);
             
@@ -133,7 +130,7 @@ public class Gacha : MonoBehaviour
 
     }
 
-    public void scriptCheck(GameObject gameObject)
+    public void scriptCheck(GameObject gameObject) //applies buff to gachaitem if you get dupe
     {
         if (gameObject.GetComponent<OSHI>() != null)
         {
@@ -153,7 +150,7 @@ public class Gacha : MonoBehaviour
         }
     }
 
-    public GameObject GetOriginalItem(GameObject orignalItem)
+    public GameObject GetOriginalItem(GameObject orignalItem) //retains the original of a gachaitem (i think lmao)
     {
 
         foreach (GameObject newPrefab in gachaPulls)
@@ -164,5 +161,10 @@ public class Gacha : MonoBehaviour
             }
         }
         return null;
+    }
+
+    public void GachaNotice()
+    {
+        //put visual notice that you can roll here, like make UI button blink or whatever
     }
 }
