@@ -26,7 +26,6 @@ public class Gacha : MonoBehaviour
     public int gachaCost;
     [Tooltip("Your gacha pulls will be stored here")]
     public List<GameObject> gachaPulls = new List<GameObject>();
-    public Transform storePoint;
     public string gachaItemTag = "GachaItem";
     public Animator animator;
     public GameObject boxAnim;
@@ -297,17 +296,14 @@ public class Gacha : MonoBehaviour
 
         if(tenRoll == false)
         {
-            //CenterSingleSprite();
+            
             CenterSprites();
         }
             
 
     }
 
-    public void CenterSingleSprite()
-    {
-        
-    }
+    
 
     public void CenterSprites()
 {
