@@ -10,6 +10,8 @@ public class OSSSHI : MonoBehaviour
     public float moneyTime;
     public int dupeAmount;
     [SerializeField] private MoneyProgressBar moneyBar;
+    public GameObject itemUI;
+    public bool hasUI;
 
     void Awake()
     {
@@ -17,6 +19,25 @@ public class OSSSHI : MonoBehaviour
         // Start the coroutine to add money after 4 seconds
         StartCoroutine(AddMoneyAfterDelay(moneyTime, moneyPop));
 
+    }
+
+    public void InstantiateUI()
+    {
+        if (hasUI == false)
+        {
+            itemUI.SetActive(true);
+            hasUI = true;
+        }
+
+    }
+
+    public void CloseUI()
+    {
+        if (hasUI == true)
+        {
+            itemUI.SetActive(false);
+            hasUI = false;
+        }
     }
 
     //public void UpdateMoneyBar(float moneyTime, float currentTime)

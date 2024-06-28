@@ -14,6 +14,8 @@ public class OSHI : MonoBehaviour
     [SerializeField] private List<GameObject> fanfareObjects = new List<GameObject>();
     public int dupeAmount;
     [SerializeField] private MoneyProgressBar moneyBar;
+    public GameObject itemUI;
+    public bool hasUI;
 
 
     void Start()//Awake()
@@ -26,6 +28,24 @@ public class OSHI : MonoBehaviour
         sphereCollider.isTrigger = true;
     }
 
+    public void InstantiateUI()
+    {
+        if (hasUI == false)
+        {
+            itemUI.SetActive(true);
+            hasUI = true;
+        }
+
+    }
+
+    public void CloseUI()
+    {
+        if (hasUI == true)
+        {
+            itemUI.SetActive(false);
+            hasUI = false;
+        }
+    }
     IEnumerator AddMoneyAfterDelay(float delay, int amount)
     {
 
