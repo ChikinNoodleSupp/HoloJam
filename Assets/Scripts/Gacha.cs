@@ -39,10 +39,12 @@ public class Gacha : MonoBehaviour
     public List<GameObject> currentRow = new List<GameObject>(); // Current row being populated
     public Canvas canvas;
     public float spritesize;
+    
 
     private void Start()
     {
         tenRoll = false;
+        
         
     }
 
@@ -54,11 +56,6 @@ public class Gacha : MonoBehaviour
         }
 
 
-        //if (Input.GetKeyDown(KeyCode.Space) && money.moneyAmount >= gachaCost) //chance this out for a UI button input or whatever
-        //{
-        //    //GachaRoll();
-            
-        //}
     }
 
     
@@ -91,14 +88,20 @@ public class Gacha : MonoBehaviour
         GameObject box = Instantiate(boxAnim, animPosition.transform.position, Quaternion.identity);
         boxAnim.GetComponent<Animator>().SetTrigger("Box");
         yield return new WaitForSeconds(1.033f);
+       
         Destroy(box);
+    }
+
+    public void GachaRolling()
+    {
+
     }
 
     public void GachaRoll() //The entirety of the gacha system
     {
         if(money.moneyAmount >= gachaCost)
         {
-
+            
             money.moneyAmount -= gachaCost;
             Debug.Log("you rolled gacha");
             int randomNumber = Random.Range(0, 101); //1-100
@@ -109,7 +112,7 @@ public class Gacha : MonoBehaviour
                 spriteRows.Add(currentRow);
             }
             
-
+            
 
             if (randomNumber <= dropChanceOSSSHI && !itemDropped) //1 out of 100 dropchance
             {

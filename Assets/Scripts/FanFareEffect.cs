@@ -20,6 +20,7 @@ public class FanFareEffect : MonoBehaviour
     {
         if (GetComponent<OSHI>() != null)
         {
+            //Add VFX here for affected individuals
             OSHI oshi = GetComponent<OSHI>();
             originalTime = oshi.moneyTime;
             oshi.moneyTime = oshi.moneyTime / moneyTimeChange;
@@ -29,6 +30,7 @@ public class FanFareEffect : MonoBehaviour
         }
         if (GetComponent<OSSSHI>() != null)
         {
+            //Add VFX here for affected individuals
             OSSSHI ossshi = GetComponent<OSSSHI>();
             originalTime = ossshi.moneyTime;
             ossshi.moneyTime = ossshi.moneyTime / moneyTimeChange;
@@ -37,6 +39,7 @@ public class FanFareEffect : MonoBehaviour
         }
         if (GetComponent<Oshit>() != null)
         {
+            //Add VFX here for affected individuals
             Oshit oshit = GetComponent<Oshit>();
             originalTime = oshit.moneyTime;
             oshit.moneyTime = oshit.moneyTime / moneyTimeChange;

@@ -30,7 +30,7 @@ public class Money : MonoBehaviour
     void Update()
     {
         
-        moneyText.text = "Money:" + Mathf.Round(moneyAmount); //shows money on UI
+        moneyText.text = "" + Mathf.Round(moneyAmount); //shows money on UI
 
 
         if(gachaButton != null)

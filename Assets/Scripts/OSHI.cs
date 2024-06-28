@@ -13,6 +13,7 @@ public class OSHI : MonoBehaviour
     public float radius;
     [SerializeField] private List<GameObject> fanfareObjects = new List<GameObject>();
     public int dupeAmount;
+    [SerializeField] private MoneyProgressBar moneyBar;
 
 
     void Start()//Awake()
@@ -30,14 +31,25 @@ public class OSHI : MonoBehaviour
 
         while (true)
         {
-            // Wait for the specified delay
-            yield return new WaitForSeconds(delay);
+
+            float elapsedTime = 0f;
+            while (elapsedTime < delay)
+            {
+                moneyBar.moneyBarSprite.fillAmount = elapsedTime / delay;
+                yield return null;
+                elapsedTime += Time.deltaTime;
+            }
+
+            moneyBar.moneyBarSprite.fillAmount = 1;
+
+
 
             // Check if the Money script is assigned
             if (moneyScript != null)
             {
                 // Add the specified amount of money
                 moneyScript.moneyAmount += amount;
+
                 //Debug.Log("Added " + amount + " money. Total money: " + moneyScript.moneyAmount);
             }
             else
@@ -46,24 +58,26 @@ public class OSHI : MonoBehaviour
             }
 
             int randomNumber = Random.Range(0, 101); //1-100
-            if(randomNumber <= fanfareChance)
+            if (randomNumber <= fanfareChance)
             {
                 Debug.Log("YOU GOT FANFARED");
+                //Add VFX here that plays once, like a pulse or something
                 foreach (GameObject n in fanfareObjects)
                 {
 
-                    
+
                     if (n.GetComponent<FanFareEffect>() == null)
                     {
                         n.AddComponent<FanFareEffect>();
                         FanFareEffect fanfare = n.GetComponent<FanFareEffect>();
                         fanfare.TriggerFanfare(6f, 2f);
                     }
-                    
-                }
-            }
 
+                }
+
+            }
         }
+
 
 
     }
