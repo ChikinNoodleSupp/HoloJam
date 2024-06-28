@@ -67,7 +67,7 @@ public class OSSSHI : MonoBehaviour
             if (moneyScript != null)
             {
                 // Add the specified amount of money
-                moneyScript.moneyAmount += amount;
+                moneyScript.moneyAmount += moneyPop;
 
                 //Debug.Log("Added " + amount + " money. Total money: " + moneyScript.moneyAmount);
             }

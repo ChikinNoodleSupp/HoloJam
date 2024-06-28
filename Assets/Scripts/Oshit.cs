@@ -47,9 +47,9 @@ public class Oshit : MonoBehaviour
         {
 
             float elapsedTime = 0f;
-            while (elapsedTime < delay)
+            while (elapsedTime < moneyTime)
             {
-                moneyBar.moneyBarSprite.fillAmount = elapsedTime / delay;
+                moneyBar.moneyBarSprite.fillAmount = elapsedTime / moneyTime;
                 yield return null;
                 elapsedTime += Time.deltaTime;
             }
@@ -62,7 +62,7 @@ public class Oshit : MonoBehaviour
             if (moneyScript != null)
             {
                 // Add the specified amount of money
-                moneyScript.moneyAmount += amount;
+                moneyScript.moneyAmount += moneyPop;
                 
                 //Debug.Log("Added " + amount + " money. Total money: " + moneyScript.moneyAmount);
             }

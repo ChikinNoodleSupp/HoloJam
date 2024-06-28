@@ -17,6 +17,7 @@ public class OSHI : MonoBehaviour
     public GameObject itemUI;
     public bool hasUI;
     public GameObject fanfareEffect;
+    private AudioSource audioSource;
 
     void Awake()
     {
@@ -28,7 +29,8 @@ public class OSHI : MonoBehaviour
         sphereCollider.isTrigger = true;
         fanfareEffect = Instantiate(fanfareEffect, this.transform);
         fanfareEffect.SetActive(false);
-        
+        audioSource = GetComponent<AudioSource>();
+
     }
 
     public void InstantiateUI()
@@ -71,7 +73,7 @@ public class OSHI : MonoBehaviour
             if (moneyScript != null)
             {
                 // Add the specified amount of money
-                moneyScript.moneyAmount += amount;
+                moneyScript.moneyAmount += moneyPop;
 
                 //Debug.Log("Added " + amount + " money. Total money: " + moneyScript.moneyAmount);
             }
@@ -85,6 +87,7 @@ public class OSHI : MonoBehaviour
             {
                 Debug.Log("YOU GOT FANFARED");
                 StartCoroutine(FanfareEffect());
+
                 //Add VFX here that plays once, like a pulse or something
                 foreach (GameObject n in fanfareObjects)
                 {
@@ -125,6 +128,7 @@ public class OSHI : MonoBehaviour
 
     public IEnumerator FanfareEffect()
     {
+        audioSource.Play();
         fanfareEffect.SetActive(true);
         yield return new WaitForSeconds(1.5f);
         fanfareEffect.SetActive(false);
