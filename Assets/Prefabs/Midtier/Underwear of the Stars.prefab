@@ -655,7 +655,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyPop: 7
   moneyTime: 3
-  fanfareChance: 3
+  fanfareChance: 50
   fanfareStatus: 0
   radius: 50
   fanfareObjects: []
@@ -663,6 +663,7 @@ MonoBehaviour:
   moneyBar: {fileID: 4036823754001363059}
   itemUI: {fileID: 8973469038963732129}
   hasUI: 0
+  fanfareEffect: {fileID: 366686767119934736, guid: b771aa06003b7104cb1c4610d33a0b74, type: 3}
 --- !u!54 &3711928881049927352
 Rigidbody:
   m_ObjectHideFlags: 0

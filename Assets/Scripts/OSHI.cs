@@ -16,9 +16,9 @@ public class OSHI : MonoBehaviour
     [SerializeField] private MoneyProgressBar moneyBar;
     public GameObject itemUI;
     public bool hasUI;
+    public GameObject fanfareEffect;
 
-
-    void Start()//Awake()
+    void Awake()
     {
         moneyScript = FindObjectOfType<Money>();
         // Start the coroutine to add money after 4 seconds
@@ -26,6 +26,9 @@ public class OSHI : MonoBehaviour
         SphereCollider sphereCollider = gameObject.AddComponent<SphereCollider>();
         sphereCollider.radius = radius;
         sphereCollider.isTrigger = true;
+        fanfareEffect = Instantiate(fanfareEffect, this.transform);
+        fanfareEffect.SetActive(false);
+        
     }
 
     public void InstantiateUI()
@@ -81,6 +84,7 @@ public class OSHI : MonoBehaviour
             if (randomNumber <= fanfareChance)
             {
                 Debug.Log("YOU GOT FANFARED");
+                StartCoroutine(FanfareEffect());
                 //Add VFX here that plays once, like a pulse or something
                 foreach (GameObject n in fanfareObjects)
                 {
@@ -119,6 +123,12 @@ public class OSHI : MonoBehaviour
         }
     }
 
+    public IEnumerator FanfareEffect()
+    {
+        fanfareEffect.SetActive(true);
+        yield return new WaitForSeconds(1.5f);
+        fanfareEffect.SetActive(false);
+    }
     public void DuplicateBuff()
     {
 
