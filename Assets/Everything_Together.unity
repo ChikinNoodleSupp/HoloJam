@@ -18499,7 +18499,7 @@ PrefabInstance:
       objectReference: {fileID: 255886691}
     - target: {fileID: 366969739047501855, guid: 5ac8f3cf8b40d32468bf02fdc639be2e, type: 3}
       propertyPath: moneyStartAmount
-      value: 10000
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 1572419584319733099, guid: 5ac8f3cf8b40d32468bf02fdc639be2e, type: 3}
       propertyPath: canvas
