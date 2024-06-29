@@ -83,4 +83,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a67b3317a03eb9247a5aa99655e89eaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gacha: {fileID: 0}
