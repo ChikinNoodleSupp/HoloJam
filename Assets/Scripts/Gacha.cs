@@ -91,11 +91,6 @@ public class Gacha : MonoBehaviour
         Destroy(box);
     }
 
-    public void GachaRolling()
-    {
-
-    }
-
     public void GachaRoll() //The entirety of the gacha system
     {
         if(money.moneyAmount >= gachaCost)
