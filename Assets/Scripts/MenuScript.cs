@@ -6,11 +6,12 @@ public class MenuScript : MonoBehaviour
 {
     public bool menuActive = false;
     public GameObject menuUI;
-
+    public bool mute = false;
 
     public void Start()
     {
         menuUI.SetActive(false);
+
     }
     public void Update()
     {
@@ -36,4 +37,20 @@ public class MenuScript : MonoBehaviour
         Application.Quit();
        
     }
+    public void MuteAllSound()
+    {
+        if(mute == false)
+        {
+            AudioListener.volume = 0;
+            mute = true;
+        }
+        else if (mute == true)
+        {
+            AudioListener.volume = 1;
+            mute = false;
+        }
+
+    }
+
+    
 }

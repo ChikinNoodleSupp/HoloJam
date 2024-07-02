@@ -1175,7 +1175,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -265.49}
   m_SizeDelta: {x: 330, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &70608023
@@ -3395,8 +3395,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AgentTypeID: 0
   m_CollectObjects: 0
-  m_Size: {x: 10, y: 10, z: 10}
-  m_Center: {x: 0, y: 2, z: 0}
+  m_Size: {x: 20.36, y: 1.25, z: 21.85}
+  m_Center: {x: 0, y: -0.25, z: 0}
   m_LayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -5381,7 +5381,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &468376210
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6056,7 +6056,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Menu
+  m_text: Options
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -13529,7 +13529,7 @@ Transform:
   m_GameObject: {fileID: 1213381592}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -8.62, y: 5, z: 0.24}
+  m_LocalPosition: {x: -8.99, y: 5, z: 0.24}
   m_LocalScale: {x: 21.266457, y: 15.517205, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19033,6 +19033,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuActive: 0
   menuUI: {fileID: 468376209}
+--- !u!114 &1715130547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431030450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62947aa1fd62d73438eb52971d8ebad1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1737935517
 GameObject:
   m_ObjectHideFlags: 0
@@ -22764,6 +22776,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 260858224}
   - {fileID: 221212009}
   - {fileID: 865219338}
   - {fileID: 1337370490}
@@ -22772,7 +22785,6 @@ Transform:
   - {fileID: 1312185796}
   - {fileID: 946381575}
   - {fileID: 1213381593}
-  - {fileID: 260858224}
   - {fileID: 1061654282}
   - {fileID: 1443773508}
   - {fileID: 1606376890}
@@ -25100,6 +25112,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7844168946582811890, guid: 5ac8f3cf8b40d32468bf02fdc639be2e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1715130544}
+    - targetCorrespondingSourceObject: {fileID: 7844168946582811890, guid: 5ac8f3cf8b40d32468bf02fdc639be2e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1715130547}
   m_SourcePrefab: {fileID: 100100000, guid: 5ac8f3cf8b40d32468bf02fdc639be2e, type: 3}
 --- !u!1001 &6627598970383669349
 PrefabInstance:
