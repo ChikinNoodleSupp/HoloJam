@@ -3538,10 +3538,10 @@ MonoBehaviour:
   m_GenerateLinks: 0
   m_IgnoreNavMeshAgent: 1
   m_IgnoreNavMeshObstacle: 1
-  m_OverrideTileSize: 0
-  m_TileSize: 256
-  m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_OverrideTileSize: 1
+  m_TileSize: 300
+  m_OverrideVoxelSize: 1
+  m_VoxelSize: 0.1
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: eb0686c6ecce9dc4faafcd6fc3cb5609, type: 2}
   m_BuildHeightMesh: 0
@@ -25205,7 +25205,7 @@ PrefabInstance:
       objectReference: {fileID: 4902437493862926513, guid: f5a04e07f43eec6428b91eab87371535, type: 3}
     - target: {fileID: 1572419584319733099, guid: 5ac8f3cf8b40d32468bf02fdc639be2e, type: 3}
       propertyPath: gachaCost
-      value: 100
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1572419584319733099, guid: 5ac8f3cf8b40d32468bf02fdc639be2e, type: 3}
       propertyPath: spawnPoint

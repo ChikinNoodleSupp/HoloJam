@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Everything_Together.unity
+    guid: 38711c7afe3869841b6e37caff59ea00
   m_configObjects: {}
