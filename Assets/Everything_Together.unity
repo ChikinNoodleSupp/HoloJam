@@ -25205,7 +25205,7 @@ PrefabInstance:
       objectReference: {fileID: 4902437493862926513, guid: f5a04e07f43eec6428b91eab87371535, type: 3}
     - target: {fileID: 1572419584319733099, guid: 5ac8f3cf8b40d32468bf02fdc639be2e, type: 3}
       propertyPath: gachaCost
-      value: 1
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1572419584319733099, guid: 5ac8f3cf8b40d32468bf02fdc639be2e, type: 3}
       propertyPath: spawnPoint
